@@ -88,7 +88,7 @@ func AddExerciseToTraining(c echo.Context) error {
 	if !ok {
 		return c.JSON(http.StatusNotFound, map[string]string{"error": "Training not found"})
 	}
-	if training.IsCompleted == true {
+	if training.IsCompleted {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "You can't edit a completed training"})
 	}
 
@@ -130,7 +130,7 @@ func AddSetsToExercise(c echo.Context) error {
 	if !ok {
 		return c.JSON(http.StatusNotFound, map[string]string{"error": "Training not found"})
 	}
-	if training.IsCompleted == true {
+	if training.IsCompleted {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "You can't edit a completed training"})
 	}
 

@@ -58,14 +58,13 @@ Cookie: token=123
         "repeats": 12
     }
 ]
-```
-as result you will get response 201 with empty response
+### as result you will get response 201 with empty response
 
 
 ## 5. I after save the windows with exercise closed 
 ## and again we move to page where we can chose next exercise or complete training
 ## to finish training I will send
-POST /trainings/1/complete
+POST http://localhost:3000/trainings/1/complete
 Content-Type: application/json
 Cookie: token=123
 
@@ -73,11 +72,11 @@ Cookie: token=123
 #as result you will get 201 with empty response
 
 
-6. Get full information about current training
-```
-GET /trainings/1
-```
-The result will be contain all exercises:
+### 6. Get full information about current training
+GET http://localhost:3000/trainings/2
+Cookie: token=123
+
+###The result will be contain all exercises:
 ```
 {
     id: 1,
@@ -116,9 +115,17 @@ The result will be contain all exercises:
 }
 ```
 
-8. Get all trainings:
-```
-GET /trainings/
-```
-The result will array of records which described above
+### 8. Get all exercises:
+GET http://localhost:3000/exercises
+Content-Type: application/json
+Cookie: token=123
+
+#### 9. Add new exercise
+POST http://localhost:3000/exercises
+Content-Type: application/json
+Cookie: token=123
+
+{
+   "name": "exercise name"
+}
 

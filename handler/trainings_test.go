@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 func TestAddSetsToExercise(t *testing.T) {
@@ -26,7 +26,7 @@ func TestAddSetsToExercise(t *testing.T) {
 
 	// Create an Echo instance and set up the router
 	e := echo.New()
-	e.POST("/trainings/:trainingID/exercises/:exerciseID/sets", addSetsToExercise)
+	e.POST("/trainings/1/exercises/2/sets", AddSetsToExercise)
 
 	// Perform the request
 	e.ServeHTTP(rr, req)
